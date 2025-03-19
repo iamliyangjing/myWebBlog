@@ -13,7 +13,7 @@ descriptionHTML: '
 tag:
  - SOP
 top: 1
-sidebar: false
+sidebar: true
 ---
 
 # 快速上手

@@ -2,14 +2,14 @@
 layout: home
 # 首页部分元素定制
 blog:
- name: '@sugarat/theme'
- motto: 简约风的 Vitepress 博客主题
+ name: 'Cooper Li'
+ motto: 极简风格的 Vitepress 博客主题
  inspiring:
-  - 基于 Vitepress 定制的主题🎨
-  - 千万不要因为走得太久，而忘记了我们为什么出发
-  - 人生就像一场修行，你不可能一开始就修成正果
-  - 无论多么沉重的负担，也不要忘记微笑；无论多么漫长的路程，也不要忘记坚持
-  - 生活的真谛不在繁华，而在于淡泊
+  - 基于 Vitepress 深度定制的主题，打造高效、优雅的阅读体验 🎨
+  - 在技术的道路上，不忘初心，方得始终
+  - 人生如逆旅，我亦是行人 —— 在代码与文字中寻找生活的意义
+  - 无论前路多么艰难，保持微笑；无论目标多么遥远，坚持前行
+  - 生活的真谛，不在于追逐繁华，而在于内心的宁静与淡泊
  # 设置 inspiringTimeout 可以实现自动切换
  inspiringTimeout: 3000
  pageSize: 6
