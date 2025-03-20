@@ -22,7 +22,7 @@ const blogTheme = getThemeConfig({
 
   // 搜索
   // 默认开启pagefind离线的全文搜索支持（如使用其它的可以设置为false）
-  // search: false,
+  // search: true,
 
   // markdown 图表支持（会增加一定的构建耗时）
   // mermaid: true
@@ -46,7 +46,7 @@ const blogTheme = getThemeConfig({
   themeColor: 'el-blue',
 
   // 文章默认作者
-  author: '粥里有勺糖',
+  author: 'Cooper Li',
 
   // 友链
   friend: [

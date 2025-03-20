@@ -11,9 +11,10 @@ descriptionHTML: '
 </code>
 </pre>'
 tag:
- - SOP
+  - 配置
 top: 1
 sidebar: true
+comment: true
 ---
 
 # 快速上手
