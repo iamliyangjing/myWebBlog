@@ -3,3 +3,8 @@ dist
 cache
 .temp
 .DS_Store
+/.idea/.gitignore
+/docs/.vitepress/config.mts.timestamp-1742402449548-cb42e20dab597.mjs
+/.idea/myWebSite.iml
+/.idea/modules.xml
+/.idea/vcs.xml
