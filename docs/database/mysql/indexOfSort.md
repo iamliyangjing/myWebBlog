@@ -2,6 +2,8 @@
 description: 索引排序
 tag:
   - MySQL
+top: 1
+sidebar: true
 comment: true
 ---
 ## 什么是索引

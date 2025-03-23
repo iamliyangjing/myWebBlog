@@ -42,6 +42,15 @@ const blogTheme = getThemeConfig({
     // },
   },
 
+  //评论
+  comment: {
+    repo: 'iamliyangjing/myWebBlog',
+    repoId: 'R_kgDOOL15Tw',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOOL15T84CoRhs',
+    inputPosition: 'bottom',
+  },
+
   // 主题色修改
   themeColor: 'el-blue',
 
