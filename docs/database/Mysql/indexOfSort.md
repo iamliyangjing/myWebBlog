@@ -90,9 +90,9 @@ B+Tree 存储千万级的数据只需要 3-4 层高度就可以满足，这意�
 
 
 
-<font color='blue'>**回表: 就是通过二级索引找到主键ID值然后通过id值去聚簇索引找到自己想要的数据**</font>
+<font color='blue'>回表: 就是通过二级索引找到主键ID值然后通过id值去聚簇索引找到自己想要的数据</font>
 
-<font color='blue'>**这种在二级索引的 B+Tree 就能查询到结果的过程就叫作「覆盖索引」，也就是只需要查一个 B+Tree 就能找到数据。**</font>
+<font color='blue'>这种在二级索引的 B+Tree 就能查询到结果的过程就叫作「覆盖索引」，也就是只需要查一个 B+Tree 就能找到数据。</font>
 
 #### 为什么MySQL InnoDB选择B+Tree作为索引的数据结构？
 

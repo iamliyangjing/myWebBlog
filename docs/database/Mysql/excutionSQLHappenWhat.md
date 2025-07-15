@@ -43,7 +43,7 @@ ok，现在我们对Mysql整体的一个架构有了一个简单的认识，就�
 # -h 指定 MySQL 服务得 IP 地址，如果是连接本地的 MySQL服务，可以不用这个参数；
 # -u 指定用户名，管理员角色名为 root；
 # -p 指定密码，如果命令行中不填写密码（为了密码安全，建议不要在命令行写密码），就需要在交互对话里面输入密码
-mysql -h$ip -u$user -p
+Mysql -h$ip -u$user -p
 ```
 
 连接的过程需要先经过 TCP 三次握手，因为 MySQL 是基于 TCP 协议进行传输的，如果 MySQL 服务并没有启动，则会收到如下的报错：
@@ -71,7 +71,7 @@ mysql -h$ip -u$user -p
 当然不是了，MySQL 定义了空闲连接的最大空闲时长，由 `wait_timeout` 参数控制的，默认值是 8 小时（28880秒），如果空闲连接超过了这个时间，连接器就会自动将它断开。
 
 ```shell
-mysql> show variables like 'wait_timeout';
+Mysql> show variables like 'wait_timeout';
 +---------------+-------+
 | Variable_name | Value |
 +---------------+-------+
@@ -83,7 +83,7 @@ mysql> show variables like 'wait_timeout';
 当然，我们自己也可以手动断开空闲的连接，使用的是 kill connection + id 的命令。
 
 ```shell
-mysql> kill connection +6;
+Mysql> kill connection +6;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
@@ -94,7 +94,7 @@ Query OK, 0 rows affected (0.00 sec)
 MySQL 服务支持的最大连接数由 max_connections 参数控制，比如我的 MySQL 服务默认是 151 个,超过这个值，系统就会拒绝接下来的连接请求，并报错提示“Too many connections”。
 
 ```shell
-mysql> show variables like 'max_connections';
+Mysql> show variables like 'max_connections';
 +-----------------+-------+
 | Variable_name   | Value |
 +-----------------+-------+
