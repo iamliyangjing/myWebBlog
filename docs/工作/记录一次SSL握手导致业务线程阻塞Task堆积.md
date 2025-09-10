@@ -1,12 +1,23 @@
-## 问题描述
+---
+description: 本文记录了一个因 SSL 握手阻塞 导致 定时任务线程池卡死、Task 堆积 的排查过程。从 怀疑 KYC 接口失败 → 线程池阻塞推测 → 线程栈与火焰图分析，最终定位到 SSL 握手卡死 的真实原因，并总结了超时配置与接口对接的经验教训。ShardingSphere-JDBC的分库实现方案
+title: 一次 SSL 握手阻塞引发的 Task 堆积排查实录
+tag:
+  - 工作
+sidebar: true
+comment: true
+recommend: 1
+---
+# [问题排查]一次 SSL 握手导致业务线程阻塞与 Task 堆积的排查记录
 
-客户反馈我们的task都没有执行，全部都处于pending状态，且堆积的越来越对。
+## ⚠️问题描述
 
-![image-20250908212943110](image/image-20250908212943110.png)
+客户反馈：系统中的 **task 未被执行**，全部停留在 **pending 状态**，并持续堆积。
 
-## 分析过程
+📸 监控截图：![image-20250908212943110](image/image-20250908212943110.png)
 
-### 1. KYC 接口失败重试
+## 🔍 分析过程
+
+### 1️⃣ KYC 接口失败重试
 
 由于9.4 / 9.5 客户 KYC接口一直失败，怀疑是KYC接口失败重试导致task数量超出了最大限制
 
@@ -65,11 +76,14 @@ ORDER BY
 
 初步workaround-> 让客户修复KYC接口，任务应该就会自动执行。
 
-× 结果: 客户重启了KYC 服务，但是task数据依旧不变，仍然堆积。
+❌ **结果**: 客户重启了KYC 服务，但是task数据依旧不变，仍然堆积。
 
-### 2. 怀疑KYC接口调用不通，一直卡住导致定时任务线程池卡住。
+### 2️⃣ 怀疑线程池被阻塞
 
-通过在系统UI重试KYC task发现能够成功调用，而且后端定义了服务调用的超时时间。
+推测：**KYC 接口调用阻塞，导致定时任务线程池卡死**。
+
+- 在 UI 触发 KYC task → 可以正常调用
+- 后端 RestTemplate 已设置超时
 
 ```groovy
 responseEntity = ProjectUtils.getRestTemplate(true,60).postForEntity(url, requestEntity, Object)
@@ -88,9 +102,9 @@ responseEntity = ProjectUtils.getRestTemplate(true,60).postForEntity(url, reques
                                 }
 ```
 
-结论：所以不可能是KYC接口调用不返回值。
+结论：👉 说明问题不在超时配置。
 
-### 3. 打印堆栈信息，发现真实原因
+### 3️⃣ 打印线程栈 → 发现真实原因
 
 在生产服务器执行打印堆栈命令
 
@@ -149,37 +163,36 @@ at com.bytesforce.insmate.pub.service.interf.CustomerIntegrationService$kycInteg
 at com.bytesforce.insmate.pub.tasks.processors.SendParticipantInfoAfterPaidProcessor.process(SendParticipantInfoAfterPaidProcessor.groovy:57)
 ```
 
+📌 结果：
+
+- 定时任务线程池有线程 **卡在 KYC 服务调用**。
+- 线程状态：`RUNNABLE`，停在 **SSL 握手阶段**。
+
 通过火焰图分析可以看到KYC一直卡在SSL握手阶段
 
 ![image-20250908221030825](image/image-20250908221030825.png)
-
-> ### 1. 基本结构
->
-> - **横轴（X 轴）**
->   - 表示采样到的调用栈的分布（不同的调用路径）。
->   - 横向长度 **代表消耗的 CPU 时间或采样次数的比例**。
->   - 越宽，表示这段代码消耗的 CPU 越多。
-> - **纵轴（Y 轴）**
->   - 表示调用栈的深度（从下往上是方法调用链）。
->   - 底部是入口方法（比如 `main`、线程入口），往上是被调用的方法。
-> - **颜色**
->   - 一般只是为了区分不同栈帧，**颜色本身没实际含义**（除非你特意配置）。
->   - 有些实现会用颜色区分 CPU / 内存 / I/O，但默认只是随机填色。
 
 Pid对应的线程 也是一直处于recvform状态
 
 ![image-20250908222236690](image/image-20250908222236690.png)
 
-### 分析结论
+📌 进一步确认：
 
-通过线程栈及源码分析：SSLSocket已经将ClientHello发送给服务端，当前正阻塞在读取服务端响应，由于设置的socketTimeout没有起作用，在服务端一直没有响应的情况下，线程一直阻塞在读取服务端响应。
+- **ClientHello 已发送**
+- 线程阻塞在 **等待服务端响应**
+- `socketTimeout` 没有生效
+- Pid 对应线程一直处于 **recvfrom 状态**
 
-问题复现：
+### 📝 分析结论
 
-在本地通过尝试 无法复现出这种情况。
+**根因**：SSL 握手阶段服务端无响应，导致业务线程长期阻塞。
 
-## 经验总结
+**结果**：定时任务线程池被占满，task 无法继续执行。
 
-1. 打印堆栈信息分析问题
-2. 对接第三方接口 TCP SSL 读取数据时间都要设置超时时间
-3. 服务端为何没有响应的原因：初步判断是由于客户端频繁SSL握手，触发了服务端的安全策略（未完待续）。
+**复现**：本地无法稳定复现，怀疑服务端安全策略导致。
+
+## 📚 经验总结
+
+1. 🛠 **学会打印并分析线程栈**，快速定位阻塞点。
+2. ⏱ **对接第三方接口时，必须设置 TCP/SSL 超时**，避免线程被无限阻塞。
+3. 🔐 **服务端未响应原因**：可能因客户端频繁 SSL 握手触发安全策略（待进一步确认）。

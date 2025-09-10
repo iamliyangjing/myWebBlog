@@ -1,3 +1,14 @@
+---
+description: String s = new String("abc")，创建了几个对象，都在哪
+title: String s = new String("abc")，创建了几个对象，都在哪
+tag:
+  - JAVA
+sidebar: true
+comment: true
+recommend: 1
+---
+# String s = new String("abc")，创建了几个对象，都在哪
+
 ```java
   String s = new String("abc");
 ```

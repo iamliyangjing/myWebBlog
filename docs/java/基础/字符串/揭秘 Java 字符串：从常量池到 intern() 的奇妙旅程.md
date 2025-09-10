@@ -1,7 +1,19 @@
+---
+description: 揭秘 Java 字符串：从常量池到 intern() 的奇妙旅程
+title: 揭秘 Java 字符串：从常量池到 intern() 的奇妙旅程
+tag:
+  - JAVA
+sidebar: true
+comment: true
+recommend: 3
+---
+# 揭秘 Java 字符串：从常量池到 intern() 的奇妙旅程
+
 ## 1. 字符串池（String Pool）
+
 字符串池（也称字符串常量池，String Intern Pool）是 JVM 为了优化字符串存储和复用而引入的一块特殊内存区域。
 
-+ 所有的 **字符串字面量** 和 **使用 **`**intern()**`** 方法的字符串**，都会存储在字符串池中。
++ 所有的 **字符串字面量** 和 **使用 **`intern()`** 方法的字符串**，都会存储在字符串池中。
 + 当两个字符串内容相同且来自字符串池时，它们的引用会相同，从而减少内存占用。
 
 例子：
