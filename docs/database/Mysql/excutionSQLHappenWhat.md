@@ -2,6 +2,7 @@
 description: 一条SQL语句的执行过程
 tag:
   - MySQL
+top: 3
 sidebar: true
 comment: true
 ---
