@@ -2,7 +2,6 @@
 description: 从数据页的角度看 B+ 树，到底是怎么构成的？
 tag:
   - MySQL
-top: 2
 sidebar: true
 comment: true
 ---
