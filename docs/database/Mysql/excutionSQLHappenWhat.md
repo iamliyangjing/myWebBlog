@@ -1,5 +1,6 @@
 ---
-description: 一条SQL语句的执行过程
+description: 本文从连接建立开始，逐步解析 MySQL 执行一条 SELECT 查询语句的全过程。涵盖 连接器、查询缓存、解析器、预处理器、优化器、执行器 等核心模块，结合 主键索引、全表扫描、索引下推 等实际案例，帮助你全面理解 Server 层与存储引擎层的协作机制，真正搞懂 MySQL 是如何一步步返回查询结果的。
+title: 🔍 一条 SELECT 背后的故事 —— 深入剖析 MySQL 查询语句的执行流程
 tag:
   - MySQL
 sidebar: true
