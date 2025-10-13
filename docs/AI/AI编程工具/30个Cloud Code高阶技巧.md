@@ -40,13 +40,13 @@
 
 `\IDE`命令打通Cloud Code与IDE（如VS Code），实现代码感知和修改对比。
 
-![image-20251008181117906](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\image\image-20251008181117906.png)
+![image-20251008181117906](.\image\image-20251008181117906.png)
 
 ## claude -p
 
 非交互模式使用`cloud -p`，使Cloud Code成为命令行AI助手。
 
-![image-20251008181244656](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\image\image-20251008181244656.png)
+![image-20251008181244656](.\image\image-20251008181244656.png)
 
 
 
@@ -54,9 +54,9 @@
 
 MCP (模型上下文协议) 作为AI与外部工具的中间层，使用`cloud mcp add`安装，可选择项目或用户级别。
 
-![image-20251008181902443](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\image\image-20251008181902443.png)
+![image-20251008181902443](.\image\image-20251008181902443.png)
 
-![image-20251008182134414](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\image\image-20251008182134414.png)
+![image-20251008182134414](.\image\image-20251008182134414.png)
 
 ## claude mcp remove
 
