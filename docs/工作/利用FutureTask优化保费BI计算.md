@@ -389,6 +389,18 @@ List<Callable<Void>> dependOnOtherRiderTasks = []
     }
 ```
 
+## 出现问题
+
+由于BI引入了多线程计算，部分BI需要依赖保费计算结果，多线程计算时，取不到保费更新的数据（MySQL事务是根据连接来的，每个线程持有一个连接）
+
+![image-20251118001017970](E:\CodeRepositroy\myWebBlog\docs\工作\image\image-20251118001017970.png)
+
+方案一： 采用和之前LCA 优化流程一样的步骤， BI 和 计算保费分开接口
+
+方案二：编程式事务 + 手动传递 Connection 
+
+目前系统采用的方案一（考虑方案二 修改成本比较大，目前系统都是使用的**声明式事务**），如果客户手动关闭游览器，可以考虑datapatch修复。
+
 ## 优化结果
 
 ±：Because the script realizes that all riders are selected under the same conditions of the insured, with different ages, occupations and genders, and incomes, and paid in a random way, the test result is added before “±”
