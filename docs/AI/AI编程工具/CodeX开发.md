@@ -1,3 +1,14 @@
+---
+description: 本指南系统介绍了 OpenAI CodeX 的四种主要运行方式（CLI、IDE 插件、SDK、云端），并提供完整的安装步骤、模型配置方法（含本地 ~/.codex/config.toml 示例）、常用命令说明、MCP 工具集成（Context7、Excel MCP）、以及在 IDE 与云端环境中的使用方式。适用于希望在本地或云端高效使用 CodeX 进行代码生成、自动化开发与项目增强的开发者。
+title: CodeX 全面使用指南：安装、配置与四大运行环境详解
+tag:
+  - AI
+  - 效率提升
+sidebar: true
+comment: true
+recommend: 1
+sticky: 1
+---
 # 如何使用CodeX
 
 > Codex四种运行环境

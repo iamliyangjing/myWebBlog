@@ -393,7 +393,7 @@ List<Callable<Void>> dependOnOtherRiderTasks = []
 
 由于BI引入了多线程计算，部分BI需要依赖保费计算结果，多线程计算时，取不到保费更新的数据（MySQL事务是根据连接来的，每个线程持有一个连接）
 
-![image-20251118001017970](E:\CodeRepositroy\myWebBlog\docs\工作\image\image-20251118001017970.png)
+![image-20251118001017970](.\image\image-20251118001017970.png)
 
 方案一： 采用和之前LCA 优化流程一样的步骤， BI 和 计算保费分开接口
 
@@ -428,3 +428,9 @@ List<Callable<Void>> dependOnOtherRiderTasks = []
 | 14     | Review  MY_MEDIC_PDS_FORM      | Request Method:getRequest URL:/api/policies/refId/pdf/MY_MEDIC_PDS_FORM?lang=en | \                     | ±2.2s         | -                        |
 | 15     | ReviewMYPRIME_PROPOSAL_FORM    | Request Method:getRequest URL:/api/policies/refId/pdf/MYPRIME_PROPOSAL_FORM?lang=en | ±8.3s                 | ±2.0s         | ↑up±6.3s                 |
 | 16     | ReviewSAVER FORM               | Request Method:getRequest URL:/api/policies/refld1]pdf/SAVER FORM?lang=en | ±8.3s                 | ±1.5s         | ↑up±6.8s                 |
+
+-------------------------------- 2025.12.7 更新
+
+## 优化带来的问题
+
+保费计算 + BI计算 不能在同一个事务内进行 -- > BI计算需要利用到保费计算的结果，如果同一个事务内，**且子线程里计算保费，拿不到未提交事务的数据。**

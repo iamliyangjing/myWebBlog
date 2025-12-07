@@ -7,7 +7,7 @@ tag:
 sidebar: true
 comment: true
 recommend: 1
-sticky: 1
+sticky: 2
 ---
 
 ## Claude Code

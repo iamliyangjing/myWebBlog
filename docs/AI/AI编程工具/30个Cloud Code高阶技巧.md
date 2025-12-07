@@ -1,3 +1,14 @@
+---
+description: 本篇整理了 Cloud Code 在真实开发中最常用、最强的 30 个高阶技巧，涵盖上下文管理、MCP（模型上下文协议）扩展、IDE 联动、权限系统、自动化、子代理、命令扩展、版本回溯、批处理能力等全栈工程化能力。掌握这些技巧，你就能把 Cloud Code 从“一个聊天 AI”升级为 可写代码、可执行命令、可管理项目、可自动化任务的全能开发副驾。
+title: Cloud Code 高阶技巧一览
+tag:
+  - AI
+  - 效率提升
+sidebar: true
+comment: true
+recommend: 1
+sticky: 3
+---
 # 30个Cloud Code高阶技巧
 
 ## INIT
@@ -28,7 +39,7 @@
 
 叹号`!`切换到命令行模式，执行临时命令，结果加入上下文。
 
-![image-20251008180835970](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\image\image-20251008180835970.png)
+![image-20251008180835970](.\image\image-20251008180835970.png)
 
 ## 井号`#`
 
