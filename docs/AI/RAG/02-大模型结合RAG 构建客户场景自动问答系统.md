@@ -21,7 +21,6 @@ recommend: 2
 2. 🤖 利用 LLM 抽取
 3. 👨‍💻 人工处理
 
-![img](D:/Git/myWebSite/myWebSite/docs/炒股/image/1741780696862-a70d43fa-54fb-4600-811b-bea3ad396030.png)
 
 ## 🎯 优化回答
 
@@ -42,8 +41,6 @@ recommend: 2
 - 🔧 **引入 Re-rank 模型**：基于 **BERT 结构**，输入为问题 + 文本，输出为相似度分数。
 - 📊 **处理流程**：对召回的 *n 个 context* 排序，将相关性最高的结果传递给大模型。
 
-![img](D:/Git/myWebSite/myWebSite/docs/炒股/image/1741781498989-1abbd485-1e5d-48ac-8689-166337baa7ed.png)
-
 ------
 
 ## 📈 效果提升
@@ -55,4 +52,3 @@ recommend: 2
 - 🎯 Re-rank + 微调模型 → 显著提升回答准确率
 - 🏆 系统在客户场景下的表现更可靠
 
-![img](D:/Git/myWebSite/myWebSite/docs/炒股/image/1741782020630-519d6f29-e06a-49d6-b0fc-e9f39c8659f5.png)

@@ -17,7 +17,7 @@
 
 #### 工作流程
 
-![image-20251015235552296](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235552296.png)
+![image-20251015235552296](.\image\image-20251015235552296.png)
 
 #### **存在的问题**
 
@@ -44,7 +44,7 @@
 
 ##### 工作流程
 
-![image-20251015235533476](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235533476.png)
+![image-20251015235533476](.\image\image-20251015235533476.png)
 
 ~~~Shell
 # 你的角色
@@ -87,7 +87,7 @@
 
 ##### 工作流程
 
-![image-20251015235608370](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235608370.png)
+![image-20251015235608370](.\image\image-20251015235608370.png)
 
 1. **用户发起提问**
    1.  用户通过自然语言提出问题，例如：“广州今天天气如何？适合出门吗？”
@@ -219,7 +219,7 @@
 
 ### 系统架构设计
 
-![image-20251015235623289](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235623289.png)
+![image-20251015235623289](.\image\image-20251015235623289.png)
 
 ## 3.3 MCP 协议是什么
 
@@ -341,7 +341,7 @@ ps aux | grep python
 
 ### 必须选用以上传输协议吗？
 
-——No，因为无论哪种传输方式，都只是把各种工具的不同接入方式统一起来，对外暴露一种协议的接口而已。![image-20251015235816973](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235816973.png)
+——No，因为无论哪种传输方式，都只是把各种工具的不同接入方式统一起来，对外暴露一种协议的接口而已。![image-20251015235816973](.\image\image-20251015235816973.png)
 
 ![img](https://oigi8odzc5w.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjhmNTQzZjQxMTg5MzQ0NzhmMWQzZjQ3ZDk1NmRjZDhfWGg5Q05tSUc5VGJ0MmVIanZUTUZlenI3ZExDMWVyUlZfVG9rZW46SG5MNWJlNFY3b0s3THJ4cWIzZmNjWm5rbjllXzE3NjA1NDM2MzE6MTc2MDU0NzIzMV9WNA)
 
@@ -404,7 +404,7 @@ ps aux | grep python
 
 ## 3.7 MCP 工作流程
 
-![image-20251015235830672](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251015235830672.png)
+![image-20251015235830672](.\image\image-20251015235830672.png)
 
 **值得一提的是，MCP 协议和 Function Calling 之间绝不是“技术递进”的关系。所谓“MCP 协议会取代 Function Calling”的说法，其实是一种不严谨的表达。**
 
