@@ -39,14 +39,14 @@ export default defineConfig({
 
     // 设置logo
     logo: '/favicon.ico',
-    // editLink: {
-    //   pattern:
-    //     'https://github.com/ATQQ/sugar-blog/tree/master/packages/blogpress/:path',
-    //   text: '去 GitHub 上编辑内容'
-    // },
+    editLink: {
+      pattern:
+        'https://github.com/ATQQ/sugar-blog/tree/master/packages/blogpress/:path',
+      text: '去 GitHub 上编辑内容'
+    },
     nav: [
       { text: '首页', link: '/' },
-      { text: '关于作者', link: 'https://sugarat.top/aboutme.html' }
+      { text: '关于作者', link: 'http://47.113.206.49/' }
     ],
     socialLinks: [
       {
