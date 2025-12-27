@@ -5,6 +5,7 @@ tag:
   - MCP
 sidebar: true
 comment: true
+commend: 1
 sticky: 1
 ---
 ## 一、前言

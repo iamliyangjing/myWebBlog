@@ -1,3 +1,11 @@
+---
+tag:
+  - AI
+  - MCP
+sidebar: true
+comment: true
+commend: 1
+---
 # 🚀谷歌Chrome DevTools MCP彻底颠覆AI浏览器自动化！让Cursor、Claude Code、Codex CLI成浏览器控制神器，AI为你打工
 
 > chrome DevTools MCP 可以直接集成到游览器中，无需下载chormium插件，效果远超Browser-Use，Stagehand。操作失误率大幅度降低，降低了Token。
