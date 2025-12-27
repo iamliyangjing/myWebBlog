@@ -2,7 +2,6 @@
 title: 视野扩展MCP - 第一节基于TypeScript开发STDIO模式的MCP Server
 tag:
   - AI
-  - RAG
   - MCP
 sidebar: true
 comment: true

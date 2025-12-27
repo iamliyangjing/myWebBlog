@@ -1,3 +1,13 @@
+---
+title: 视野扩展MCP - 第二节基于TypeScript开发HTTP SSE模式的MCP Server
+tag:
+  - AI
+  - MCP
+sidebar: true
+comment: true
+recommend: 1
+sticky: 1
+---
 ## 一、前言
 
 今年MCP越来越火了，因此在AI时代，掌握MCP的开发已经成为Java开发人员的AI能力之一了，除了要学会使用Java开发MCP Server，我们也需要系统化的学习MCP知识，体系化的学习MCP的知识。
@@ -8,17 +18,17 @@
 
 官方画了这个图非常清晰的表达了远程MCP和本地MCP的概念:
 
-![image-20251227133203234](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227133203234.png)
+![image-20251227133203234](.\image\image-20251227133203234.png)
 
 标红的区域是本节我们开发的这种模式。
 
 Spring AI也分享了一个关于Stdio模式和SSE模式的对比图，大家可以感觉一下：
 
-![image-20251227133220962](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227133220962.png)
+![image-20251227133220962](.\image\image-20251227133220962.png)
 
 对于上一节分享的Stdio模式和本节的HTTP SSE模式来说，区别如下：
 
-![image-20251227133231828](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227133231828.png)
+![image-20251227133231828](.\image\image-20251227133231828.png)
 
 ## 二、正文
 
@@ -104,7 +114,7 @@ express
 
 3、然后我们新建一个空的index.ts文件，编辑完成后，我们在当前目录下执行npm install命令，安装当前的工程依赖。
 
-![image-20251227140534701](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227140534701.png)
+![image-20251227140534701](.\image\image-20251227140534701.png)
 
 4、接下来在index.ts文件中，我们基于上一节的基础之上做几点修改：
 
@@ -376,7 +386,7 @@ async function handleGetTianqiData(city :string) {
 
 然后本节我们将初始化链接的代码放到了/sse的请求地址中，这样就基本方便的开发了一个基于HTTP SSE模式的MCP Server。
 
-![image-20251227140704235](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227140704235.png)
+![image-20251227140704235](.\image\image-20251227140704235.png)
 
 接下来本地执行命令进行构建，构建完成后会在当前目录下输出dist/index.js文件：
 
@@ -394,13 +404,13 @@ npx -y @modelcontextprotocol/inspector
 
 接下来，我们使用Cherry Studio客户端，体验一下这个基于HTTP SSE方式的MCP Server，设置好信息后，单击保存按钮即可，如下所示：
 
-![image-20251227140759497](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227140759497.png)
+![image-20251227140759497](.\image\image-20251227140759497.png)
 
-![image-20251227140749171](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227140749171.png)
+![image-20251227140749171](.\image\image-20251227140749171.png)
 
 在控制台中，我们也可以看到自己的相关请求日志：
 
-![image-20251227140812250](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227140812250.png)
+![image-20251227140812250](.\image\image-20251227140812250.png)
 
 这样基于Typescript开发一个HTTP SSE模式的MCP Server我们就完成了。
 
