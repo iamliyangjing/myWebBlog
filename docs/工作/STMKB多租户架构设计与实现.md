@@ -1,3 +1,14 @@
+---
+description: 当子公司业务接入，系统如何从单租户平滑演进为多租户？本文深度复盘 STMKB 项目的改造过程，从存储方案的成本与性能权衡，到 Spring Boot 动态数据源、Elasticsearch 及文件存储的全链路隔离实现，为你提供一套可落地的企业级解决方案。
+title:  系统演进实战：详解多租户架构下的数据隔离与全链路设计
+tag:
+  - 工作
+  - JAVA
+sidebar: true
+comment: true
+recommend: 1
+sticky: 3
+---
 # 🚀 STMKB多租户架构设计与实现
 
 ## 背景

@@ -1,3 +1,12 @@
+---
+description: 不仅有手把手的 Demo，还要吃透自动装配原理 Description： 告别只会用 Starter 的阶段！本文通过一个完整的“Hello World”案例，带你走完 Starter 开发的全流程。从父工程构建到 Spring Boot 3.x 新特性，再到面试必问的自动装配全链路源码解析，助你实现从“框架使用者”到“架构设计者”的跨越。
+title: 从零开发 Spring Boot Starter
+tag:
+  - Spring
+sidebar: true
+comment: true
+recommend: 1
+---
 # 从零开发一个 Spring Boot Starter
 
 > 本文将通过 **完整可运行 Demo**，手把手教你如何从 0 到 1 开发一个 **Spring Boot Starter**。适合已经使用过 Spring Boot、希望提升框架设计能力的开发者。

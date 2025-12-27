@@ -7,7 +7,6 @@ tag:
 sidebar: true
 comment: true
 recommend: 1
-sticky: 3
 ---
 # 30个Cloud Code高阶技巧
 

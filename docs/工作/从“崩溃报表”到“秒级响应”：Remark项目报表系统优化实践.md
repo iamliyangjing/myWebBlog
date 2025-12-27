@@ -7,6 +7,7 @@ tag:
 sidebar: true
 comment: true
 recommend: 1
+sticky: 3
 ---
 # 从“崩溃报表”到“秒级响应”：Remark项目报表系统优化实践
 

@@ -7,7 +7,6 @@ tag:
 sidebar: true
 comment: true
 recommend: 1
-sticky: 1
 ---
 # 🤖 AI RAG：让大语言模型更“接地气”
 

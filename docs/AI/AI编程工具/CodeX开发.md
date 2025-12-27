@@ -7,7 +7,6 @@ tag:
 sidebar: true
 comment: true
 recommend: 1
-sticky: 1
 ---
 # 如何使用CodeX
 

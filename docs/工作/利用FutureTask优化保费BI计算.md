@@ -1,3 +1,13 @@
+---
+title:  从两分钟到10秒级响应：优化复杂产品BI计算时间过长问题
+tag:
+  - 工作
+  - JAVA
+sidebar: true
+comment: true
+recommend: 1
+sticky: 4
+---
 # 优化复杂产品BI计算时间过长问题
 
 ## 业务背景

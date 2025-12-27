@@ -1,13 +1,12 @@
 ---
-description: RAG（检索增强生成）通过“检索 + 生成”的结合，让大语言模型突破知识时效性、减少幻觉，并能引用可信来源。本文带你快速理解 RAG 的原理、实现流程与核心组件，看看它是如何让 LLM 真正落地企业场景的。
-title: 🚀 什么是 RAG？让大语言模型更聪明、更靠谱的关键技术
+description: 想要体验 Claude Code 强大的编程能力，又受限于官方 API 额度？本文手把手教你安装配置 claude-code-router，通过接入阿里云 ModelScope 免费版 Qwen3 和 Google Gemini，无需官方 Key 也能流畅运行 AI 命令行工具。附完整 Config 配置与常见端口报错解决指南。
+title: 零成本解锁 Claude Code：用 ModelScope 白嫖 Qwen3 打造 AI 编程助手
 tag:
   - AI
   - 效率提升
 sidebar: true
 comment: true
 recommend: 1
-sticky: 2
 ---
 
 ## Claude Code
