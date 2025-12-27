@@ -14,27 +14,27 @@ AI 从最初只能对话的 Chatbot，辅助人类决策的 Copilot，再到能�
 
 而2025年的新思想，就是将工具从 Agent 层解耦出来，单独变成一层 MCP Server 层，并对开发、调用进行标准化。 MCP Server 为上层 Agent 提供上下文、工具的标准化调用方式。
 
-![image-20251226000024254](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251226000024254.png)
+![image-20251226000024254](.\image\image-20251226000024254.png)
 
 目前已经有了很多的MCP的市场，比如：
 
 https://mcp.so/
 
-![image-20251226000044350](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251226000044350.png)
+![image-20251226000044350](.\image\image-20251226000044350.png)
 
 https://mcp.aibase.cn/
 
-![image-20251226000054946](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251226000054946.png)
+![image-20251226000054946](.\image\image-20251226000054946.png)
 
 https://sai.baidu.com/mcp
 
-![image-20251226000106399](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251226000106399.png)
+![image-20251226000106399](.\image\image-20251226000106399.png)
 
 本节分享下如何基于TypeScript SDK来开发一个基于STDIO模式的MCP Server。
 
 目前可以开发3种模式的MCP Server:																																													
 
-![image-20251227115115265](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115115265.png)
+![image-20251227115115265](.\image\image-20251227115115265.png)
 
 每种通信方法在不同的应用场景中具有不同的优劣势，适用于不同的需求。本文分享的使Stdio的模式开发。
 
@@ -71,11 +71,11 @@ SSE 是基于 HTTP 协议的流式传输机制，它允许服务器通过 HTTP �
 
 一般常见的开发流程如下：
 
-![image-20251227115141453](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115141453.png)
+![image-20251227115141453](.\image\image-20251227115141453.png)
 
 1、环境搭建完成后，首先我们创建一个文件夹，如下所示：
 
-![image-20251227115203088](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115203088.png)
+![image-20251227115203088](.\image\image-20251227115203088.png)
 
 2、然后我们在当前目录下新建一个package.json文件，这里可以直接使用我的准备好的内容：
 
@@ -142,7 +142,7 @@ SSE 是基于 HTTP 协议的流式传输机制，它允许服务器通过 HTTP �
 
 3、然后我们新建一个空的index.ts文件，编辑完成后，我们在当前目录下执行npm install命令，安装当前的工程依赖。
 
-![image-20251227115247204](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115247204.png)
+![image-20251227115247204](.\image\image-20251227115247204.png)
 
 4、接下来在index.ts文件中，写一个最简单版本的内容：
 
@@ -275,7 +275,7 @@ https://api.苏苏.cn/API/moji.php?city=哈尔滨&n=1
 
 截图如下：
 
-![image-20251227115338072](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115338072.png)
+![image-20251227115338072](.\image\image-20251227115338072.png)
 
 因此，本节我们希望实现一个天气查询的MCP Server。
 
@@ -458,17 +458,17 @@ npm run build
 
 npx -y @modelcontextprotocol/inspector node dist/index.js
 
-进入到浏览器的控制台，我们选择STDIO模式，选择List Tool后，单击制定的tool，输入我们的测试数据，确保可以成功，如下所示：![image-20251227115437095](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115437095.png)
+进入到浏览器的控制台，我们选择STDIO模式，选择List Tool后，单击制定的tool，输入我们的测试数据，确保可以成功，如下所示：![image-20251227115437095](.\image\image-20251227115437095.png)
 
 接下来，我们使用Cherry Studio客户端，注册上这个开发环境的MCP Server，（windows电脑）如下所示：
 
-![image-20251227115511780](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115511780.png)
+![image-20251227115511780](.\image\image-20251227115511780.png)
 
 然后保存和启用。
 
 然后我们问一个问题测试下，可以看到也是成功的：
 
-![image-20251227115522615](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251227115522615.png)
+![image-20251227115522615](.\image\image-20251227115522615.png)
 
 这样基于Typescript开发一个MCP Server我们就完成了。
 
