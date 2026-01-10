@@ -1,3 +1,13 @@
+---
+title: 视野扩展MCP - 第二节基于TypeScript开发Streamable HTTP模式的MCP Server
+tag:
+  - AI
+  - MCP
+sidebar: true
+comment: true
+commend: 99
+sticky: 3
+---
 ## 一、前言
 
 2025年，MCP的发展是所有程序员都需要去关注和掌握的技术，也许有一天，AI 程序员不懂 MCP，就犹如前端程序员不懂 JavaScript！
@@ -8,13 +18,13 @@ SSE 的最大缺陷之一，显而易见：SSE 需要 server 端保持一个长�
 
  Server 建立 SEE 连接后，在整个 connection 的生命周期中，MCP Server 需要一直保持着这个 SSE 连接。
 
-![image-20251228004832445](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228004832445.png)
+![image-20251228004832445](.\image\image-20251228004832445.png)
 
 那么，对于要支持 SSE 的运行在 remote 的 MCP Server 来说，就需要保证高可靠性。在高并发的情况下，对 MCP Server 的负载更是一个挑战。
 
 在 2025年3 月 26 日，MCP 发布了最新的第二代MCP协议标准，用 Streamable HTTP “取代”了HTTP SSE这种模式。
 
-![image-20251228004844870](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228004844870.png)
+![image-20251228004844870](.\image\image-20251228004844870.png)
 
 简单来说，在新的 Streamable HTTP 协议中，MCP Server 可以根据自己实际的使用场景来决定自己是 Stateless 还是 Stateful 的，而不是像 SSE 那样，一定是 Stateful 的。
 
@@ -30,7 +40,7 @@ Streamable HTTP 并不是传统意义上的 **流式 HTTP**（Streaming HTTP）�
 
 本节在之前的基础之上，还是基于TypeScript-SDK快速开发一个 Streamable HTTP 的 MCP Server！
 
-![image-20251228004859502](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228004859502.png)
+![image-20251228004859502](.\image\image-20251228004859502.png)
 
 TypeScript-SDK的设计理念是"简单易用但功能强大"，即使你不是TypeScript专家，也能轻松上手并构建复杂的MCP应用。
 
@@ -40,9 +50,9 @@ TypeScript-SDK的设计理念是"简单易用但功能强大"，即使你不是T
 
 1、环境搭建完成后，首先我们创建一个文件夹，也可以复制第一节的目录，这样改动会非常的小，如下所示：
 
-![image-20251228004940129](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228004940129.png)2、然后我们复制上一节httpsse的文件夹内容，作为本节的基础代码：
+![image-20251228004940129](.\image\image-20251228004940129.png)2、然后我们复制上一节httpsse的文件夹内容，作为本节的基础代码：
 
-![image-20251228005016705](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228005016705.png)
+![image-20251228005016705](.\image\image-20251228005016705.png)
 
 3、接下来，我们继续修改index.ts文件，更改实现为Streamable HTTP模式的MCP Server代码。本节分成6个部分，其中核心是创建StreamableHTTPServerTransport对象，就可以实现一个MCP Server。
 
@@ -59,7 +69,7 @@ TypeScript-SDK的设计理念是"简单易用但功能强大"，即使你不是T
 
 接下来分享下针对这个无状态的Streamable HTTP MCP Server开发的几个部分：
 
-![image-20251228005034446](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228005034446.png)
+![image-20251228005034446](.\image\image-20251228005034446.png)
 
 4、首先在引入依赖的时候，更改为StreamableHTTPServerTransport：
 
@@ -411,13 +421,13 @@ npx -y @modelcontextprotocol/inspector
 
 接下来，我们使用Cherry Studio客户端，体验一下这个基于Streamable HTTP方式的MCP Server，设置好信息后，单击保存按钮即可，如下所示：
 
-![image-20251228012519961](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228012519961.png)
+![image-20251228012519961](.\image\image-20251228012519961.png)
 
 然后我们去聊天界面选中这个MCP工具，然后去测试下，可以看到也是成功的。
 
 在控制台中，我们也可以看到自己的相关请求日志：
 
-![image-20251228012530194](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228012530194.png)
+![image-20251228012530194](.\image\image-20251228012530194.png)
 
 通过这个日志可以看到，对于无状态管理的MCP Server，每次都会有个Server和Transport的创建过程，有些时候我们可以更改为有状态的代码控制，针对本文的这个Streamable HTTP模式的MCP Server，完整代码如下：
 
@@ -674,7 +684,7 @@ process.on('SIGINT', async () => {
 
 针对这种有状态管理的代码，我们会生成一个sessionId，然后存下来，然后我们通过日志，可以看到第二次请求的时候，客户端会携带MCP标准的请求头的参数：
 
-![image-20251228012605111](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228012605111.png)
+![image-20251228012605111](.\image\image-20251228012605111.png)
 
 这样，我们就基于TypeScript开发了一个Streamable HTTP模式的MCP Server，部署的时候也是通过node dist/index.js方式进行部署。
 
@@ -704,4 +714,4 @@ TypeScript-SDK的设计理念是"简单易用但功能强大"，即使你不是T
 
 对比如下：
 
-![image-20251228012619080](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20251228012619080.png)
+![image-20251228012619080](.\image\image-20251228012619080.png)
