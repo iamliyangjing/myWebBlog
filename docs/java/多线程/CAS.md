@@ -12,14 +12,14 @@ java.util.concurrent.atomic下的类
 
 **没有使用CAS之前：**
 
-多线程环境**<font style="color:#E8323C;">不使用原子类</font>**保证线程安全i++(基本数据类型)
+多线程环境<font style="color:#E8323C;">**不使用原子类**</font>保证线程安全i++(基本数据类型)
 
 使用CAS之后:
 
-多线程环境：使用**<font style="color:#E8323C;">原子类</font>**保证线程安全i++(基本数据类型)
+多线程环境：使用<font style="color:#E8323C;">**原子类**</font>保证线程安全i++(基本数据类型)
 
 ### 什么是CAS
-compare and swap 的缩写，中文翻译成**<font style="color:#E8323C;">比较并交换，</font>**<font style="color:#000000;">实现并发算法时常用到的一种技术。</font>
+compare and swap 的缩写，中文翻译成<font style="color:#E8323C;">比较并交换</font>，<font style="color:#000000;">实现并发算法时常用到的一种技术。</font>
 
 **<font style="color:#000000;">它包含三个操作数----内存位置、预期原值、及更新值</font>**
 
@@ -31,11 +31,11 @@ compare and swap 的缩写，中文翻译成**<font style="color:#E8323C;">比�
 
 CAS有3个操作数，位置内存值V，旧的预期值A，要修改的更新值B。
 
-当且仅当旧的预期值A和内存值V相同时，将内存值V修改为B，否则什么都不做或重来**<font style="color:#F5222D;">当它重来重试的这种行为成为----自旋!!</font>**
+当且仅当旧的预期值A和内存值V相同时，将内存值V修改为B，否则什么都不做或重来<font style="color:#F5222D;">当它重来重试的这种行为成为----自旋!!</font>
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660901687841-e0b00b9d-5dd9-4dd1-9f75-46e0e02c37bd.png)
 
 ### 硬件级别的保证
-CAS是JDK提供的**<font style="color:#2F54EB;">非阻塞</font>**原子性操作，它通过**<font style="color:#2F54EB;">硬件保证</font>**了比较-更新的原子性。
+CAS是JDK提供的<font style="color:#2F54EB;">**非阻塞**</font>原子性操作，它通过**<font style="color:#2F54EB;">硬件保证</font>**了比较-更新的原子性。
 
 它是非阻塞的且自身具有原子性，也就是说这玩意效率更高且通过硬件保证，说明这玩意更可靠。
 
@@ -47,12 +47,12 @@ CAS是一条CPU的原子指令(**<font style="color:#F5222D;">cmpxchg指令</fon
 ## 二、CAS底层原理及对unsafe类的理解
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660902993002-0a8a8602-96f8-4966-80f5-7bf6186df8a5.png)
 ### 1、Unsafe
-是CAS的核心类，由于Java方法无法直接访问底层系统，需要通过本地（native）方法来访问，Unsafe相当于一个后门，基于该类可以直接操作特定内存的数据。**<font style="color:#F5222D;">Unsafe类存在于sun.misc包中</font>**，其内部方法操作可以像C的**<font style="color:#F5222D;">指针</font>**一样直接操作内存，因为Java中CAS操作的执行依赖于Unsafe类的方法。
+是CAS的核心类，由于Java方法无法直接访问底层系统，需要通过本地（native）方法来访问，Unsafe相当于一个后门，基于该类可以直接操作特定内存的数据。**<font style="color:#F5222D;">Unsafe类存在于sun.misc包中</font>**，其内部方法操作可以像C的<font style="color:#F5222D;">**指针**</font>一样直接操作内存，因为Java中CAS操作的执行依赖于Unsafe类的方法。
 
 **<font style="color:#F5222D;">注意Unsafe类中的所有方法都是native修饰的，也就是说Unsafe类中的方法都直接调用操作系统底层资源执行相应任务</font>**
 
 ### <font style="color:#000000;">2、变量valueOffset</font>
-表示该变量值在内存中的**<font style="color:#FA541C;">偏移地址</font>**，因为Unsafe就是根据内存偏移地址获取数据的值。
+表示该变量值在内存中的<font style="color:#FA541C;">**偏移地址**</font>，因为Unsafe就是根据内存偏移地址获取数据的值。
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660904797027-33b09c0c-a936-4c62-a3ba-198bc6f7f5b9.png)
 
 我们知道i++线程不安全的，那么atomicInteger.getAndIncrement()能保证原子性
@@ -61,10 +61,10 @@ CAS的全称为Compare-And-Swap，**<font style="color:#FA541C;">它是一条CPU
 
 它的功能是判断内存某个位置的值是否为预期值，如果是则更改为新的值，这个过程是原子的。
 
-Atomiclnteger类主要利用**<font style="color:#FA541C;">CAS(compare and swap)+ volatile和 native方法来保证原子操作</font>**，从而避免 synchronized的高开销，执行效率大为提升。
+Atomiclnteger类主要利用<font style="color:#FA541C;">**CAS(compare and swap)+ volatile和 native方法来保证原子操作**</font>，从而避免 synchronized的高开销，执行效率大为提升。
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660905138894-7930868a-c9be-46a1-bb2a-4e4c53e1661e.png)
 
-CAS并发原语体现在JAVA语言中就是sun.misc.Unsafe类中的各个方法。调用UnSafe类中的CAS方法，JVM会帮我们实现出**<font style="color:#2F54EB;">CAS汇编指令</font>**。这是一种完全依赖于**<font style="color:#2F54EB;">硬件</font>**的功能，通过它实现了原子操作。再次强调，由于CAS是一种系统原语，原语属于操作系统用语范畴，是由若干条指令组成的，用于完成某个功能的一个过程，**<font style="color:#F5222D;">并且原语的执行必须是连续的，在执行过程中不允许被中断，也就是说CAS是一条CPU的原子指令，不会造成所谓的数据不一致问题。</font>**
+CAS并发原语体现在JAVA语言中就是sun.misc.Unsafe类中的各个方法。调用UnSafe类中的CAS方法，JVM会帮我们实现出<font style="color:#2F54EB;">**CAS汇编指令**</font>。这是一种完全依赖于**<font style="color:#2F54EB;">硬件</font>**的功能，通过它实现了原子操作。再次强调，由于CAS是一种系统原语，原语属于操作系统用语范畴，是由若干条指令组成的，用于完成某个功能的一个过程，<font style="color:#F5222D;">**并且原语的执行必须是连续的，在执行过程中不允许被中断，也就是说CAS是一条CPU的原子指令，不会造成所谓的数据不一致问题。**</font>
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660907941085-fd429275-cc7d-4722-87d2-53a16bd30b4d.png)
 
 假设线程A和线程B两个线程同时执行getAddInt操作(分别跑在不同CPU上)；
@@ -73,7 +73,7 @@ CAS并发原语体现在JAVA语言中就是sun.misc.Unsafe类中的各个方法�
 
 2 线程A通过getIntVolatile（var1，var2）拿到value值3，这时线程A被挂起。
 
-3.线程B也通过getIntVolatile(var1,var2）方法获取value值3，此时刚好线程B**<font style="color:#F5222D;">没有被挂起</font>**并执行compareAndSwapInt方法比较内存值为3，成功修改内存值为4，线程B打完收工，一切OK。
+3.线程B也通过getIntVolatile(var1,var2）方法获取value值3，此时刚好线程B<font style="color:#F5222D;">**没有被挂起**</font>并执行compareAndSwapInt方法比较内存值为3，成功修改内存值为4，线程B打完收工，一切OK。
 
 4.这时线程A恢复，执行compareAndSwapInt方法修饰，发现自己手里的值数字3和主内存的值数字4不一致，说明该值已经被其他线程抢先一步修改过了，那A线程本次修改失败，**<font style="color:#F5222D;">只能重新读取重新来一遍了</font>**。
 
@@ -94,7 +94,7 @@ JDK提供的CAS机制，在汇编层级会禁止变量两侧的指令优化，�
 
 实现方式是基于硬件平台的汇编指令，在intel的CPU中（X86机器上），使用的是汇编指令cmpxchg指令。
 
-核心思想就**<font style="color:#F5222D;">是，比较要更新变量的值V和预期值E（compare），相等才会将V的值设为N</font>**
+核心思想就<font style="color:#F5222D;">**是，比较要更新变量的值V和预期值E（compare），相等才会将V的值设为N**</font>
 
 **<font style="color:#F5222D;">如果不相等就自旋。</font>**
 
@@ -131,7 +131,7 @@ public class AtomicReferenceDemo {
 ### 2.自旋锁
 （spinlock）
 
-CAS是实现自旋锁的基础，CAS利用CPU指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，是指尝试获取锁的线程不会立即阻塞，而是**<font style="color:#F5222D;">采用循环的方式去尝试获取锁</font>**，当线程发现锁被占用时，会不断循环判断锁的状态，直到获取。这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU
+CAS是实现自旋锁的基础，CAS利用CPU指令保证了操作的原子性，以达到锁的效果，至于自旋呢，看字面意思也很明白，自己旋转，是指尝试获取锁的线程不会立即阻塞，而是<font style="color:#F5222D;">**采用循环的方式去尝试获取锁**</font>，当线程发现锁被占用时，会不断循环判断锁的状态，直到获取。这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU
 ![](https://cdn.nlark.com/yuque/0/2022/png/791535/1660915775953-1807e1c4-2678-4e50-912d-3a03b8055603.png)
 
 ```java
