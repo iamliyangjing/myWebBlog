@@ -15,7 +15,7 @@ import { blogTheme } from './blog-theme'
 export default defineConfig({
   // 继承博客主题(@sugarat/theme)
   extends: blogTheme,
-  base: '/blog',
+  // base: '/blog',
   lang: 'zh-cn',
   title: 'Cooper Li',
   description: 'Cooper Li的博客主题，基于 vitepress 实现',
