@@ -106,7 +106,7 @@ public class ThreadLocalDemo {
 }
 ```
 
-1. <font color='red'>**必须回收自定义的ThreadLocal变量，**</font>尤其在线程池场景下，线程经常复用，ThreadLocal会出问题
+<font color='red'>**必须回收自定义的ThreadLocal变量，**</font>尤其在线程池场景下，线程经常复用，ThreadLocal会出问题
 
 **场景复现**
 
@@ -139,17 +139,19 @@ public class ThreadDemo2 {
 }
 ```
 
-阿里巴巴ThreadLocal规范
+阿里巴巴规范
+
 ![image-20260108220432204](.\image\image-20260108220432204.png)
-- 每个Thread内有自己的**实例副本**且该副本只由当前线程自己使用
+
+- 每个Thread内有自己的实例副本且该副本只由当前线程自己使用
 - 既然其他Thread不可访问，那就不存在多个线程共享的问题
 - 统一设置初始值，但是每个线程对这个值得修改都是各自线程互相独立的。
 总结:
 1. 加入synchronized或者Lock控制资源的访问顺序 
 2. 人手一份,大家各自安好没必要争抢。
 ### 1.ThreadLocal源码分析
-Thread、`ThreadLocal`、`ThreadLocalMap`的关系
-每次 new 一个线程都会有一个 `ThreadLocalMap`
+Thread、ThreadLocal、ThreadLocalMap的关系
+每次 new 一个线程都会有一个 ThreadLocalMap
 ![image-20260108220527672](.\image\image-20260108220527672.png)
 **再次体会，各自线程，人手一份**
 ![image-20260108220543443](.\image\image-20260108220543443.png)
@@ -166,15 +168,13 @@ Thread、`ThreadLocal`、`ThreadLocalMap`的关系
 
 因为threadlocalmap使用了弱引用
 
-![image-20260108220737793](.\image\image-20260108220737793.png)
-
-​                  **ThreadLocalMap 与 WeakReference**
+![image-20260108220737793](.\image\image-20260108220737793.png)**ThreadLocalMap 与 WeakReference**
 
 ThreadLocalMap从字面上就可以看出这是一个保存ThreadLocal对象的map(以ThreadLocal为Key)，不过是经过了两层包装的ThreadLocal对象:
 
-(1）第一层包装是使用`WeakReference`<ThreadLocal<?>>将ThreadLocal对象<font color='red'>**变成一个弱引用的对象;**</font>
+(1）第一层包装是使用WeakReference<ThreadLocal<?>>将ThreadLocal对象<font color='red'>**变成一个弱引用的对象**</font>;
 
-(2）第二层包装是定义了一个专门的类Entry来扩展`WeakReference`<ThreadLocal<?>>；
+(2）第二层包装是定义了一个专门的类Entry来扩展WeakReference<ThreadLocal<?>>；
 
 #### 四种引用分别是什么？
 
@@ -224,9 +224,9 @@ public class ReferenceDemo {
 
 对于只有软引用的对象来说：
 
-​		<font color='blue'>**当系统内存充足时它不会被回收，**</font>
+1. <font color='blue'>**当系统内存充足时它不会被回收，**</font>
 
-​		<font color='blue'>**当系统内存不足时它会被回收。**</font>
+2. <font color='blue'>**当系统内存不足时它会被回收。**</font>
 
 软引用通常用在对内存敏感的程序中，比如高速缓存就有用到软引用，**内存够用的时候就保留，不够用就回收!**
 
@@ -415,7 +415,7 @@ line2调用set()方法后新建一个Entry，通过源码可知**Entry对象里�
 - **remove() clear 将引用设置为null**
 - **结论**
 
-- - 从前面的set.getEntry.remove方法看出，在threadLocal的生命周期里，针对threadLocal存在的内存泄漏的问题,都会通过expungeStaleEntry.cleanSomeSlots,replaceStaleEntry这三个方法清理掉key为null的脏entry.
+- 从前面的set.getEntry.remove方法看出，在threadLocal的生命周期里，针对threadLocal存在的内存泄漏的问题,都会通过expungeStaleEntry.cleanSomeSlots,replaceStaleEntry这三个方法清理掉key为null的脏entry.
 
 ## 五、总结
 
