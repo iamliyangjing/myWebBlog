@@ -1,3 +1,14 @@
+---
+description: 本文系统讲解了 OpenClaw 的核心能力与架构原理，并提供从环境准备（Node.js 22+）、大模型 API Key 配置，到本地安装与网关启动的完整实操步骤。同时详细演示如何接入飞书开放平台，创建企业自建应用、配置机器人权限与事件订阅，实现通过飞书远程驱动 OpenClaw Agent 执行任务。适合希望快速上手 OpenClaw 并构建企业级 AI Agent 工作流的开发者参考。
+title: OpenClaw 实战指南：从本地部署到飞书机器人接入全流程详解
+tag:
+  - AI
+  - 效率提升
+sidebar: true
+comment: true
+recommend: 1
+---
+# OpenClaw 实战指南：从本地部署到飞书机器人接入全流程详解
 ## 1、OpenClaw 到底是个啥？
 
 官网：https://openclaw.ai/
