@@ -1,3 +1,13 @@
+---
+description: MCP（Model Context Protocol）正在成为 AI Agent 生态的重要基础设施。本文整理了 8 个实用的 MCP Server，包括 Chrome DevTools、Neon、Supabase、Context7、Replicate、Vercel 和 GitHub，并介绍如何通过 MCP 让 AI 直接操作浏览器、数据库、代码仓库和部署平台，构建完整的 AI 开发工作流。
+title: 8 个必备 MCP Server：打造完整 AI Agent 开发环境（Claude Code / Cursor）
+tag:
+  - AI
+  - MCP
+sidebar: true
+comment: true
+commend: 100
+---
 # MCP 工具推荐（AI Agent 开发必备）
 
 MCP（Model Context Protocol）正在成为 AI Agent 生态的重要基础设施。
