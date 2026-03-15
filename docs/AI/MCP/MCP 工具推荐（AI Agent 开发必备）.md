@@ -162,7 +162,7 @@ claude mcp add replicate npx replicate-flux-mcp
 
 ### 2 创建 API Key
 
-登录 Replicate 官网创建 API Key。![image-20260315154148961](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20260315154148961.png)
+登录 Replicate 官网创建 API Key。![image-20260315154148961](.\image\image-20260315154148961.png)
 
 ### 3 验证 MCP
 
@@ -172,7 +172,7 @@ claude mcp add replicate npx replicate-flux-mcp
 claude mcp list
 ```
 
-确认 replicate 已安装成功。![image-20260315154219378](E:\CodeRepositroy\myWebBlog\docs\AI\MCP\image\image-20260315154219378.png)
+确认 replicate 已安装成功。![image-20260315154219378](.\image\image-20260315154219378.png)
 
 ## 7. Vercel
 
