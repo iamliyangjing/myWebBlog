@@ -82,7 +82,17 @@ Supabase 是一个完整的 **Postgres 开发平台**，提供：
 
 https://supabase.com/docs/guides/functions/examples/mcp-server-mcp-lite
 
+- **claude code** 安装
 
+1. 打开https://supabase.com/docs/guides/getting-started/mcp![image-20260317200216559](.\image\image-20260317200216559.png)
+
+```
+claude mcp add supabase --transport http https://mcp.supabase.com/mcp?project_ref=djwigrilapyjuxxx
+```
+
+**codex** 安装
+
+![image-20260317200449484](.\image\image-20260317200449484.png)
 
 ## 4. Context7
 
@@ -227,6 +237,19 @@ claude mcp add github --transport http https://api.githubcopilot.com/mcp/
   }
 }
 ```
+
+codex
+
+~/.codex/config.toml
+
+```
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+# Replace with your real PAT (least-privilege scopes). Do NOT commit this.
+bearer_token_env_var = "REDACTED_PAT"
+```
+
+
 
 ## MCP 工具推荐组合
 
