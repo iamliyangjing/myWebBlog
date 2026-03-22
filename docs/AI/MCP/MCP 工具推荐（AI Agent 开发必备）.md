@@ -246,9 +246,7 @@ https://github.com/github/github-mcp-server
 
 安装：
 
-```
-claude mcp add github --transport http https://api.githubcopilot.com/mcp/
-```
+![image-20260322095236458](.\image\image-20260322095236458.png)
 
 配置 Token：
 
@@ -266,13 +264,7 @@ codex
 
 ~/.codex/config.toml
 
-```
-[mcp_servers.github]
-url = "https://api.githubcopilot.com/mcp/"
-bearer_token_env_var = ""
-```
-
-
+![image-20260322095251338](.\image\image-20260322095251338.png)
 
 ## MCP 工具推荐组合
 
