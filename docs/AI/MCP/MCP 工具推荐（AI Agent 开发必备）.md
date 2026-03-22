@@ -270,7 +270,7 @@ codex
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
 # Replace with your real PAT (least-privilege scopes). Do NOT commit this.
-bearer_token_env_var = "REDACTED_PAT"
+bearer_token_env_var = "ghp_xxxx"
 ```
 
 
