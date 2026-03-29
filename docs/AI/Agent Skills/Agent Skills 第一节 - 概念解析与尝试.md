@@ -2,6 +2,7 @@
 description: 本文深入解析 Anthropic 最新发布的 Agent Skills 开放标准，通过对比 MCP 与 A2A 阐明其定位与优势，探讨渐进式披露、代码化执行等核心特点，并结合自然语言查数、指标归因分析两大实战案例，展示如何将业务能力封装为可复用的技能模块，助力智能体实现高效、可扩展的任务执行与协作。文章还展望了 Agent Skills 作为 AI “操作系统层”与“包管理协议”的未来生态意义。
 title: Agent Skills 概念解析与实践：如何用技能模块化释放智能体潜力
 tag:
+  - Agent Skill
   - AI
   - 效率提升
 sidebar: true

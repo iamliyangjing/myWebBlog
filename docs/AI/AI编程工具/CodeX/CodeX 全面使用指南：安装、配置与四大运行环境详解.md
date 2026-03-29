@@ -3,7 +3,7 @@ description: 本指南系统介绍了 OpenAI CodeX 的四种主要运行方式�
 title: CodeX 全面使用指南：安装、配置与四大运行环境详解
 tag:
   - AI
-  - 效率提升
+  - CodeX
 sidebar: true
 comment: true
 recommend: 1
@@ -62,11 +62,11 @@ env_key= "MODELSCOPE_API_KEY"
 
 在环境变量编辑上api_key
 
-![image-20251019145540958](.\\image\image-20251019145540958.png)
+![image-20251019145540958](..\image\image-20251019145540958.png)
  
 输入codex 即可运行
 
-![image-20251019145612953](.\\image\image-20251019145612953.png)
+![image-20251019145612953](..\image\image-20251019145612953.png)
 
 
 
@@ -74,7 +74,7 @@ env_key= "MODELSCOPE_API_KEY"
 
 /init 通读当前文件夹，会将读到内容生成一个AGENTS.md文件
 
-![image-20251019150037837](.\\image\image-20251019150037837.png)
+![image-20251019150037837](..\image\image-20251019150037837.png)
 
 /new  新开一个对话
 
@@ -113,7 +113,7 @@ args = [
 ]
 ```
 
-![image-20251019184410088](.\\image\image-20251019184410088.png)
+![image-20251019184410088](..\image\image-20251019184410088.png)
 
 
 
@@ -121,7 +121,7 @@ args = [
 
 安装CodeX插件，只要本地配置了，无需再配置
 
-![image-20251019185121600](.\\image\image-20251019185121600.png)
+![image-20251019185121600](..\image\image-20251019185121600.png)
 
 ## 云端运行
 

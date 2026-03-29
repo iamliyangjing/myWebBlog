@@ -3,7 +3,7 @@ description: 本篇整理了 Cloud Code 在真实开发中最常用、最强的 
 title: Cloud Code 高阶技巧一览
 tag:
   - AI
-  - 效率提升
+  - Claude code
 sidebar: true
 comment: true
 recommend: 1
@@ -38,7 +38,7 @@ recommend: 1
 
 叹号`!`切换到命令行模式，执行临时命令，结果加入上下文。
 
-![image-20251008180835970](.\image\image-20251008180835970.png)
+![image-20251008180835970](..\image\image-20251008180835970.png)
 
 ## 井号`#`
 
@@ -50,13 +50,13 @@ recommend: 1
 
 `\IDE`命令打通Cloud Code与IDE（如VS Code），实现代码感知和修改对比。
 
-![image-20251008181117906](.\image\image-20251008181117906.png)
+![image-20251008181117906](..\image\image-20251008181117906.png)
 
 ## claude -p
 
 非交互模式使用`cloud -p`，使Cloud Code成为命令行AI助手。
 
-![image-20251008181244656](.\image\image-20251008181244656.png)
+![image-20251008181244656](..\image\image-20251008181244656.png)
 
 
 
@@ -64,9 +64,9 @@ recommend: 1
 
 MCP (模型上下文协议) 作为AI与外部工具的中间层，使用`cloud mcp add`安装，可选择项目或用户级别。
 
-![image-20251008181902443](.\image\image-20251008181902443.png)
+![image-20251008181902443](..\image\image-20251008181902443.png)
 
-![image-20251008182134414](.\image\image-20251008182134414.png)
+![image-20251008182134414](..\image\image-20251008182134414.png)
 
 ## claude mcp remove
 

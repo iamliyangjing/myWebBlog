@@ -3,7 +3,7 @@ description: 想要体验 Claude Code 强大的编程能力，又受限于官方
 title: 零成本解锁 Claude Code：用 ModelScope 白嫖 Qwen3 打造 AI 编程助手
 tag:
   - AI
-  - 效率提升
+  - Claude code
 sidebar: true
 comment: true
 recommend: 1
@@ -37,7 +37,7 @@ npm install -g @musistudio/claude-code-router
 
 > Create and configure your `~/.claude-code-router/config.json` file. For more details, you can refer to `config.example.json`.
 
-![image-20250927211335506](.\image\image-20250927211335506.png)
+![image-20250927211335506](..\image\image-20250927211335506.png)
 
 等待config.json文件配置成功后输入'**ccr code**'就可以直接启动
 
@@ -45,11 +45,11 @@ npm install -g @musistudio/claude-code-router
 
 有时候我们执行ccr code启动不起来，可能是因为端口被占用了。
 
-![image-20250927212619284](.\image\image-20250927212619284.png)
+![image-20250927212619284](..\image\image-20250927212619284.png)
 
 可以在配置文件conf.json里面加一个PORT自定义一个端口。
 
-![image-20250927212715036](.\image\image-20250927212715036.png)
+![image-20250927212715036](..\image\image-20250927212715036.png)
 
 ### ⚠️补充二
 
@@ -61,15 +61,15 @@ npm install -g @musistudio/claude-code-router
 
 可以免费白嫖阿里Qwen Qcoder3模型，需要绑定阿里云社区账号
 
-![image-20250927212032564](.\image\image-20250927212032564.png)
+![image-20250927212032564](..\image\image-20250927212032564.png)
 
 绑定完成后创建访问令牌Token
 
-![image-20250927212210649](.\image\image-20250927212210649.png)
+![image-20250927212210649](..\image\image-20250927212210649.png)
 
 可以在个人首页查看每天调用次数。
 
-![image-20250927212919762](.\image\image-20250927212919762.png)
+![image-20250927212919762](..\image\image-20250927212919762.png)
 
 可以在config.json文件自定义API提供商。
 
@@ -105,7 +105,7 @@ npm install -g @musistudio/claude-code-router
 
 用其他模型API_key复制给Config.Json的**API_KEY**.
 
-![image-20250927212241427](.\image\image-20250927212241427.png)
+![image-20250927212241427](..\image\image-20250927212241427.png)
 
 ## Gemini
 
@@ -113,7 +113,7 @@ npm install -g @musistudio/claude-code-router
 
 创建API_Key
 
-![image-20250927213756844](.\image\image-20250927213756844.png)
+![image-20250927213756844](..\image\image-20250927213756844.png)
 
 ```json
 {
@@ -151,7 +151,7 @@ https://platform.moonshot.cn/console/account
 
 创建一个密码，把密钥复制保存好
 
-![image-20250927210603071](.\image\image-20250927210603071.png)
+![image-20250927210603071](..\image\image-20250927210603071.png)
 
 
 
