@@ -4,7 +4,6 @@ title: Agent Skills 概念解析与实践：如何用技能模块化释放智能
 tag:
   - Agent Skill
   - AI
-  - 效率提升
 sidebar: true
 comment: true
 recommend: 1
