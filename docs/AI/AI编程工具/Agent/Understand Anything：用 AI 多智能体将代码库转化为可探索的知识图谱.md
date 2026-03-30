@@ -27,7 +27,7 @@ https://lum.is-a.dev/Understand-Anything/
 
 目前这个项目开源不到一个月，已经有了6.8K：
 
-![image-20260330230622145](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330230622145.png)
+![image-20260330230622145](.\image-20260330230622145.png)
 
 **Understand Anything**是一款将任意代码库转化为**可探索、可搜索、可对话的交互式知识图谱**的工具。的核心是结合大语言模型（LLM）与静态代码分析技术，通过多智能体架构深入分析项目，为你构建一个可视化的、可交互的知识地图。
 
@@ -49,7 +49,7 @@ https://lum.is-a.dev/Understand-Anything/
 
 核心功能如下：
 
-![image-20260330230711045](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330230711045.png)
+![image-20260330230711045](.\image\image-20260330230711045.png)
 
 接下来我使用ClaudeCode、MiniMax2.7、开源商城项目：CRMEB商城JAVA版来分享下这个东西。
 
@@ -59,11 +59,11 @@ https://lum.is-a.dev/Understand-Anything/
 
 然后通过cc switch软件，设置ClaudeCode的模型为MiniMax2.7模型，这里我购买了CodingPlan计划，目前是比较合适的：
 
-![image-20260330230751732](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330230751732.png)
+![image-20260330230751732](.\image\image-20260330230751732.png)
 
 我来访问我自己的RAG 项目，是一个很简单的单体项目
 
-![image-20260330231053099](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231053099.png)
+![image-20260330231053099](.\image\image-20260330231053099.png)
 
 接下来我们在这个项目下打开ClaudeCode的终端窗口，安装下这个Understand Anything插件：
 
@@ -71,23 +71,23 @@ https://lum.is-a.dev/Understand-Anything/
 >
 > /plugin install understand-anything
 
-![image-20260330231146475](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231146475.png)
+![image-20260330231146475](.\image\image-20260330231146475.png)
 
 安装完成后，我们这里重启下插件，执行reload-plugins命令，然后看到：
 
-![image-20260330231205279](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231205279.png)
+![image-20260330231205279](.\image\image-20260330231205279.png)
 
 如果没有看到可以直接ctrl+C然后claude -c重进。
 
 接下来可以看到Claude Code开始执行这个/understand的命令，它开启了5个并行的subagent，然后开始阶段1和阶段2的分析：
 
-![image-20260330231227509](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231227509.png)
+![image-20260330231227509](.\image\image-20260330231227509.png)
 
 这个步骤比较耗时，当前我下载的这个RAG项目中的java文件大概有100多个，Claude Code帮我搞了40个多个批次去执行，多智能体（multi-agent）架构会：扫描你的项目，提取函数 / 类 / 依赖，构建知识图谱保存至.understand-anything/knowledge-graph.json
 
 /understand 命令调用 5 个 agent：
 
-![image-20260330231319354](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231319354.png)
+![image-20260330231319354](.\image\image-20260330231319354.png)
 
 生成完成后，实际上再本地会产生一个知识图谱的JSON文件，如果我们后续需要自己二次创作也是OK的：
 
@@ -129,7 +129,7 @@ https://lum.is-a.dev/Understand-Anything/
 
 这个运行完成后，可以看下文档，文档中也包含一些学习的路径：
 
-![image-20260330231513284](E:\CodeRepositroy\myWebBlog\docs\AI\AI编程工具\Agent\image\image-20260330231513284.png)
+![image-20260330231513284](.\image\image-20260330231513284.png)
 
 我们也可以根据自己的需求进行提问。
 
