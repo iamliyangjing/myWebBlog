@@ -5,10 +5,10 @@ description: 分享10个 Claude Code 隐藏命令和快捷键（/btw、/rewind�
 title: Claude Code 隐藏命令与高阶技巧
 tag:
   - AI
-  - Claude code
+  - Claude Code
 sidebar: true
 comment: true
-recommend: 1
+recommend: 4
 ---
 # 分享10个你可能不知道的Claude Code隐藏命令
 
@@ -44,7 +44,7 @@ recommend: 1
 
 Claude Code负责人Thariq在Twitter上发了个帖子介绍，直接两百多万的阅读量，你就知道，大家有多需要这个功能了。
 
-![image-20260324223724155](.\image\image-20260324223724155.png)
+![image-20260324223724155](..\image\image-20260324223724155.png)
 
 /btw是干嘛的呢，它让你在Claude正在干活的时候插一个问题进去，但这个问题不会被加入对话历史。
 
@@ -56,10 +56,8 @@ Claude Code负责人Thariq在Twitter上发了个帖子介绍，直接两百多�
 
 现在打/btw，然后说一个问题，比如我在执行过程中，突然想知道现在我这个项目的抓取流程是啥，我就可以直接敲/btw。
 
-![image-20260324223751070](.\image\image-20260324223751070.png)
-
+![image-20260324223751070](..\image\image-20260324223751070.png)
 你在敲一下空格，就可以直接在后面写问题了，然后发送。
-
 ![image-20260324223805170](..\image\image-20260324223805170.png)
 
 这个回答，完全不会中断你之前发送的任务，上下两个进程，是纯粹的并行状态。

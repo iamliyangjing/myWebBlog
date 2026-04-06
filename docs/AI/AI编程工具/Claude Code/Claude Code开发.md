@@ -3,7 +3,7 @@ description: 想要体验 Claude Code 强大的编程能力，又受限于官方
 title: 零成本解锁 Claude Code：用 ModelScope 白嫖 Qwen3 打造 AI 编程助手
 tag:
   - AI
-  - Claude code
+  - Claude Code
 sidebar: true
 comment: true
 recommend: 1

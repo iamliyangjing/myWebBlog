@@ -3,10 +3,10 @@ description: 本篇整理了 Cloud Code 在真实开发中最常用、最强的 
 title: Cloud Code 高阶技巧一览
 tag:
   - AI
-  - Claude code
+  - Claude Code
 sidebar: true
 comment: true
-recommend: 1
+recommend: 2
 ---
 # 30个Cloud Code高阶技巧
 

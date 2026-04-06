@@ -3,10 +3,10 @@ description: 本篇整理了Claude Code创始人亲授的10条核心玩法，涵
 title: Claude Code创始人亲授的 10条核心玩法
 tag:
   - AI
-  - Claude code
+  - Claude Code
 sidebar: true
 comment: true
-recommend: 1
+recommend: 3
 ---
 # Claude Code创始人亲授的 10条核心玩法
 

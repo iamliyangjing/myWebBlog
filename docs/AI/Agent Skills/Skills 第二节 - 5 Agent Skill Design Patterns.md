@@ -6,7 +6,7 @@ tag:
   - AI
 sidebar: true
 comment: true
-recommend: 1
+recommend: 2
 ---
 ## 前言
 
