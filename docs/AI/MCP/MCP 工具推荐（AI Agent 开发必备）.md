@@ -192,7 +192,21 @@ claude mcp add replicate npx replicate-flux-mcp
 
 ```
 claude mcp add replicate npx replicate-flux-mcp
+
+{
+  "mcpServers": {
+    "replicate": {
+      "command": "npx",
+      "args": ["-y", "replicate-mcp"],
+      "env": {
+        "REPLICATE_API_TOKEN": "your-token-here"
+      }
+    }
+  }
+}
 ```
+
+
 
 ### 2 创建 API Key
 
@@ -244,6 +258,7 @@ GitHub MCP 允许 AI 直接操作 GitHub。
 
 https://github.com/github/github-mcp-server
 
+创建token地址：https://github.com/settings/personal-access-tokens
 安装：
 
 ![image-20260322095236458](.\image\image-20260322095236458.png)
@@ -265,6 +280,17 @@ codex
 ~/.codex/config.toml
 
 ![image-20260322095251338](.\image\image-20260322095251338.png)
+
+## 9. Draw IO
+
+官网：https://github.com/lgazo/drawio-mcp-server
+
+```
+    "drawio": {
+      "command": "npx",
+      "args": ["-y", "drawio-mcp-server"]
+    }
+```
 
 ## MCP 工具推荐组合
 
